@@ -1,8 +1,9 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { BlurView } from "expo-blur";
 import { StyleSheet, Text, View } from "react-native";
 
 import { LibraryPreview } from "@/types/song";
-import { colors, spacing } from "@/theme";
+import { colors, radius, spacing } from "@/theme";
 
 type LibraryShelfProps = {
   library: LibraryPreview;
@@ -10,7 +11,7 @@ type LibraryShelfProps = {
 
 export function LibraryShelf({ library }: LibraryShelfProps) {
   return (
-    <View style={styles.card}>
+    <BlurView intensity={28} tint="light" style={styles.card}>
       <View style={styles.header}>
         <View>
           <Text style={styles.title}>{library.title}</Text>
@@ -26,18 +27,19 @@ export function LibraryShelf({ library }: LibraryShelfProps) {
           </View>
         ))}
       </View>
-    </View>
+    </BlurView>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    borderRadius: 28,
+    borderRadius: radius["4xl"],
     padding: spacing.lg,
     backgroundColor: colors.glass,
     borderWidth: 1,
-    borderColor: colors.line,
+    borderColor: colors.border,
     gap: spacing.md,
+    overflow: "hidden",
   },
   header: {
     flexDirection: "row",
@@ -62,8 +64,8 @@ const styles = StyleSheet.create({
   previewCard: {
     flex: 1,
     minHeight: 84,
-    borderRadius: 22,
-    backgroundColor: "rgba(255,255,255,0.06)",
+    borderRadius: radius["2xl"],
+    backgroundColor: colors.glassSoft,
     alignItems: "flex-start",
     justifyContent: "flex-end",
     padding: spacing.md,

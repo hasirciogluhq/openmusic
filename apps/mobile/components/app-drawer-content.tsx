@@ -1,10 +1,11 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { DrawerContentComponentProps, DrawerContentScrollView } from "@react-navigation/drawer";
+import { BlurView } from "expo-blur";
 import { router } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import { playlists } from "@/data/mock-music";
-import { colors, spacing } from "@/theme";
+import { colors, radius, spacing } from "@/theme";
 
 const quickLinks = [
   { label: "Browse", icon: "compass-outline", href: "/(tabs)/browse" },
@@ -19,6 +20,7 @@ export function AppDrawerContent(props: DrawerContentComponentProps) {
       {...props}
       contentContainerStyle={styles.content}
       scrollEnabled
+      style={styles.scroll}
     >
       <View style={styles.header}>
         <Text style={styles.eyebrow}>Library</Text>
@@ -36,10 +38,12 @@ export function AppDrawerContent(props: DrawerContentComponentProps) {
               router.push(item.href);
               props.navigation.closeDrawer();
             }}
-            style={styles.linkRow}
+            style={styles.linkRowWrap}
           >
-            <Ionicons name={item.icon} size={19} color={colors.textPrimary} />
-            <Text style={styles.linkText}>{item.label}</Text>
+            <BlurView intensity={28} tint="light" style={styles.linkRow}>
+              <Ionicons name={item.icon} size={19} color={colors.textPrimary} />
+              <Text style={styles.linkText}>{item.label}</Text>
+            </BlurView>
           </Pressable>
         ))}
       </View>
@@ -70,6 +74,9 @@ export function AppDrawerContent(props: DrawerContentComponentProps) {
 }
 
 const styles = StyleSheet.create({
+  scroll: {
+    backgroundColor: colors.sidebar,
+  },
   content: {
     paddingHorizontal: spacing.lg,
     paddingTop: spacing.xxl,
@@ -80,7 +87,7 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
   },
   eyebrow: {
-    color: colors.accent,
+    color: colors.textMuted,
     fontSize: 12,
     fontWeight: "700",
     letterSpacing: 1.5,
@@ -100,16 +107,20 @@ const styles = StyleSheet.create({
   links: {
     gap: spacing.sm,
   },
+  linkRowWrap: {
+    borderRadius: radius["2xl"],
+    overflow: "hidden",
+  },
   linkRow: {
     minHeight: 54,
-    borderRadius: 20,
+    borderRadius: radius["2xl"],
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.md,
     paddingHorizontal: spacing.md,
     backgroundColor: colors.glassStrong,
     borderWidth: 1,
-    borderColor: colors.line,
+    borderColor: colors.border,
   },
   linkText: {
     color: colors.textPrimary,
@@ -133,15 +144,15 @@ const styles = StyleSheet.create({
   playlistArt: {
     width: 52,
     height: 52,
-    borderRadius: 18,
+    borderRadius: radius.xl,
     backgroundColor: colors.glassStrong,
     borderWidth: 1,
-    borderColor: colors.line,
+    borderColor: colors.border,
     alignItems: "center",
     justifyContent: "center",
   },
   playlistArtText: {
-    color: colors.accent,
+    color: colors.primary,
     fontSize: 14,
     fontWeight: "800",
   },

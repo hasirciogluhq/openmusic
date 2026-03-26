@@ -1,8 +1,9 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { BlurView } from "expo-blur";
 import { StyleSheet, Text, View } from "react-native";
 
 import { Song } from "@/types/song";
-import { colors, spacing } from "@/theme";
+import { colors, radius, spacing } from "@/theme";
 
 type DownloadRowProps = {
   song: Song;
@@ -11,7 +12,7 @@ type DownloadRowProps = {
 
 export function DownloadRow({ song, caption }: DownloadRowProps) {
   return (
-    <View style={styles.row}>
+    <BlurView intensity={30} tint="light" style={styles.row}>
       <View style={styles.artwork}>
         <Ionicons name="musical-note" size={18} color={colors.textPrimary} />
       </View>
@@ -26,7 +27,7 @@ export function DownloadRow({ song, caption }: DownloadRowProps) {
         <Text style={styles.duration}>{song.duration}</Text>
         <Text style={styles.format}>{song.format}</Text>
       </View>
-    </View>
+    </BlurView>
   );
 }
 
@@ -36,16 +37,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: spacing.md,
     padding: spacing.md,
-    borderRadius: 24,
+    borderRadius: radius["3xl"],
     backgroundColor: colors.glassStrong,
     borderWidth: 1,
-    borderColor: colors.line,
+    borderColor: colors.border,
+    overflow: "hidden",
   },
   artwork: {
     width: 50,
     height: 50,
-    borderRadius: 18,
-    backgroundColor: "rgba(255,255,255,0.08)",
+    borderRadius: radius.xl,
+    backgroundColor: colors.glassSoft,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -76,7 +78,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   format: {
-    color: colors.accent,
+    color: colors.primary,
     fontSize: 11,
     fontWeight: "800",
   },

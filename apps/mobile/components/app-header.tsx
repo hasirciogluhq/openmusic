@@ -1,9 +1,10 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "expo-router";
 import { DrawerActions } from "@react-navigation/native";
+import { BlurView } from "expo-blur";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-import { colors, spacing } from "@/theme";
+import { colors, radius, spacing } from "@/theme";
 
 type AppHeaderProps = {
   eyebrow: string;
@@ -32,9 +33,11 @@ export function AppHeader({
         {showMenuButton ? (
           <Pressable
             onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-            style={styles.menuButton}
+            style={styles.menuButtonWrap}
           >
-            <Ionicons name="menu" size={20} color={colors.textPrimary} />
+            <BlurView intensity={36} tint="light" style={styles.menuButton}>
+              <Ionicons name="menu" size={20} color={colors.textPrimary} />
+            </BlurView>
           </Pressable>
         ) : null}
       </View>
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
   },
   eyebrow: {
-    color: colors.accent,
+    color: colors.textMuted,
     fontSize: 12,
     fontWeight: "700",
     letterSpacing: 1.8,
@@ -76,14 +79,18 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     maxWidth: 290,
   },
-  menuButton: {
+  menuButtonWrap: {
     width: 46,
     height: 46,
-    borderRadius: 23,
+    borderRadius: radius["2xl"],
+    overflow: "hidden",
+  },
+  menuButton: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.glassStrong,
     borderWidth: 1,
-    borderColor: colors.line,
+    borderColor: colors.border,
   },
 });

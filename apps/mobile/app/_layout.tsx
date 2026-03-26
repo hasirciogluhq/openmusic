@@ -8,16 +8,16 @@ import { colors } from "@/theme";
 export default function RootLayout() {
   return (
     <SafeAreaProvider>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <Drawer
         drawerContent={(props) => <AppDrawerContent {...props} />}
         screenOptions={{
           headerShown: false,
           drawerType: "slide",
-          overlayColor: "rgba(3, 5, 10, 0.48)",
+          overlayColor: colors.overlay,
           drawerStyle: {
             width: 312,
-            backgroundColor: colors.drawer,
+            backgroundColor: colors.sidebar,
           },
           sceneStyle: {
             backgroundColor: colors.background,

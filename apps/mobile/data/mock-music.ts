@@ -56,19 +56,19 @@ export const genres: Genre[] = [
     id: "pop",
     name: "Pop",
     trackCount: 48,
-    tint: "#A24CFF",
+    tint: "#9ECAFF",
   },
   {
     id: "rock",
     name: "Rock",
     trackCount: 31,
-    tint: "#FF6A3D",
+    tint: "#5C7CFF",
   },
   {
     id: "indie",
     name: "Indie",
     trackCount: 26,
-    tint: "#1C9D7C",
+    tint: "#445DFF",
   },
 ];
 

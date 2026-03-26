@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { Genre } from "@/types/song";
-import { colors, spacing } from "@/theme";
+import { colors, radius, spacing } from "@/theme";
 
 type GenreRailProps = {
   items: Genre[];
@@ -32,18 +32,18 @@ const styles = StyleSheet.create({
   card: {
     width: 154,
     minHeight: 104,
-    borderRadius: 28,
+    borderRadius: radius["4xl"],
     padding: spacing.lg,
     justifyContent: "space-between",
     overflow: "hidden",
   },
   label: {
-    color: colors.textPrimary,
+    color: colors.primaryForeground,
     fontSize: 20,
     fontWeight: "700",
   },
   count: {
-    color: "rgba(255,255,255,0.7)",
+    color: colors.primaryForeground,
     fontSize: 12,
     fontWeight: "600",
   },

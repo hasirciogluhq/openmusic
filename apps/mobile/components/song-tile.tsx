@@ -2,7 +2,7 @@ import { BlurView } from "expo-blur";
 import { StyleSheet, Text, View } from "react-native";
 
 import { Song } from "@/types/song";
-import { colors, spacing } from "@/theme";
+import { colors, radius, spacing } from "@/theme";
 
 type SongTileProps = {
   song: Song;
@@ -31,14 +31,16 @@ const styles = StyleSheet.create({
   tile: {
     width: "47.5%",
     aspectRatio: 1,
-    borderRadius: 30,
+    borderRadius: radius["4xl"],
     overflow: "hidden",
     backgroundColor: colors.tile,
     position: "relative",
+    borderWidth: 1,
+    borderColor: colors.border,
   },
   artwork: {
     flex: 1,
-    backgroundColor: "rgba(255,255,255,0.06)",
+    backgroundColor: colors.glassSoft,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
     left: 12,
     right: 12,
     bottom: 12,
-    borderRadius: 18,
+    borderRadius: radius.xl,
     overflow: "hidden",
     paddingHorizontal: 12,
     paddingVertical: 10,
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   meta: {
-    color: "rgba(255,255,255,0.7)",
+    color: colors.textSecondary,
     fontSize: 12,
   },
 });

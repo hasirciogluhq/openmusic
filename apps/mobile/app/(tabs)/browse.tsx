@@ -17,8 +17,8 @@ export default function BrowseScreen() {
     >
       <AppHeader
         eyebrow="OpenMusic"
-        title="Kutuphaneni hissettir."
-        subtitle="Pop, rock ve diger raflar arasinda gez. Ardindan sarkiyi tek dokunusta ac."
+        title="Özgür Müzik"
+        subtitle="İsteiğin kategoride mizği ücretsiz dinleyebilirsin."
       />
 
       <SearchBar placeholder="Sanatci, sarki veya album ara" />

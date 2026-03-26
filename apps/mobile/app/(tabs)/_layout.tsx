@@ -5,26 +5,26 @@ import { colors } from "@/theme";
 export default function TabsLayout() {
   return (
     <NativeTabs
-      blurEffect="systemUltraThinMaterialDark"
-      backgroundColor="rgba(11, 14, 22, 0.72)"
-      badgeBackgroundColor={colors.accent}
+      blurEffect="systemUltraThinMaterialLight"
+      backgroundColor={colors.glass}
+      badgeBackgroundColor={colors.primary}
       iconColor={{
-        default: "rgba(232, 236, 245, 0.62)",
-        selected: colors.textPrimary,
+        default: colors.textMuted,
+        selected: colors.primary,
       }}
       labelStyle={{
         default: {
-          color: "rgba(232, 236, 245, 0.66)",
+          color: colors.textMuted,
           fontSize: 11,
           fontWeight: "600",
         },
         selected: {
-          color: colors.textPrimary,
+          color: colors.primary,
           fontSize: 11,
           fontWeight: "700",
         },
       }}
-      shadowColor="rgba(255,255,255,0.08)"
+      shadowColor={colors.shadow}
       disableTransparentOnScrollEdge
     >
       <NativeTabs.Trigger name="browse">

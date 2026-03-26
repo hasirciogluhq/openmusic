@@ -1,10 +1,11 @@
+import { BlurView } from "expo-blur";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { AppHeader } from "@/components/app-header";
 import { DownloadRow } from "@/components/download-row";
 import { SearchBar } from "@/components/search-bar";
 import { librarySongs } from "@/data/mock-music";
-import { colors, spacing } from "@/theme";
+import { colors, radius, spacing } from "@/theme";
 
 export default function MyMusicsScreen() {
   return (
@@ -22,14 +23,14 @@ export default function MyMusicsScreen() {
       <SearchBar placeholder="My Musics icinde ara" compact />
 
       <View style={styles.summaryRow}>
-        <View style={styles.summaryPill}>
+        <BlurView intensity={30} tint="light" style={styles.summaryPill}>
           <Text style={styles.summaryValue}>248</Text>
           <Text style={styles.summaryLabel}>Toplam sarki</Text>
-        </View>
-        <View style={styles.summaryPill}>
+        </BlurView>
+        <BlurView intensity={30} tint="light" style={styles.summaryPill}>
           <Text style={styles.summaryValue}>18.2 GB</Text>
           <Text style={styles.summaryLabel}>Yerel depolama</Text>
-        </View>
+        </BlurView>
       </View>
 
       <View style={styles.list}>
@@ -62,12 +63,13 @@ const styles = StyleSheet.create({
   },
   summaryPill: {
     flex: 1,
-    borderRadius: 24,
+    borderRadius: radius["3xl"],
     borderWidth: 1,
-    borderColor: colors.line,
+    borderColor: colors.border,
     backgroundColor: colors.glassStrong,
     padding: spacing.lg,
     gap: spacing.xs,
+    overflow: "hidden",
   },
   summaryValue: {
     color: colors.textPrimary,

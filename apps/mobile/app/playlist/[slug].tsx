@@ -1,10 +1,11 @@
 import { Stack, useLocalSearchParams } from "expo-router";
+import { BlurView } from "expo-blur";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { AppHeader } from "@/components/app-header";
 import { DownloadRow } from "@/components/download-row";
 import { librarySongs, playlists } from "@/data/mock-music";
-import { colors, spacing } from "@/theme";
+import { colors, radius, spacing } from "@/theme";
 
 export default function PlaylistScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
@@ -25,12 +26,12 @@ export default function PlaylistScreen() {
           showMenuButton
         />
 
-        <View style={styles.heroCard}>
+        <BlurView intensity={30} tint="light" style={styles.heroCard}>
           <Text style={styles.heroCount}>{playlist.count} track</Text>
           <Text style={styles.heroHint}>
             Bu liste drawer icinden secilen sabit playlist akisini temsil ediyor.
           </Text>
-        </View>
+        </BlurView>
 
         <View style={styles.list}>
           {librarySongs.map((song) => (
@@ -54,12 +55,13 @@ const styles = StyleSheet.create({
     gap: spacing.lg,
   },
   heroCard: {
-    borderRadius: 28,
+    borderRadius: radius["4xl"],
     padding: spacing.lg,
     backgroundColor: colors.glassStrong,
     borderWidth: 1,
-    borderColor: colors.line,
+    borderColor: colors.border,
     gap: spacing.xs,
+    overflow: "hidden",
   },
   heroCount: {
     color: colors.textPrimary,
