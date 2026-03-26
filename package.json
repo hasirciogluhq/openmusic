@@ -11,10 +11,5 @@
     "start:mobile": "bun run --cwd apps/mobile start",
     "typecheck": "bun run --cwd apps/mobile typecheck"
   },
-  "dependencies": {
-    "expo": "^55.0.8",
-    "react": "19.2.0",
-    "react-native": "0.83.2"
-  },
   "version": "1.0.0"
 }
