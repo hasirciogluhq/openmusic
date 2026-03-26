@@ -14,10 +14,10 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.openmusic.mobile"
+      "bundleIdentifier": "com.hasircioglu.openmusic.mobile"
     },
     "android": {
-      "package": "com.openmusic.mobile",
+      "package": "com.hasircioglu.openmusic.mobile",
       "adaptiveIcon": {
         "backgroundColor": "#0E0F13"
       }
