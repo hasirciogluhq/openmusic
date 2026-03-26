@@ -1,0 +1,14 @@
+{
+  "name": "openmusic",
+  "private": true,
+  "packageManager": "bun@1.2.13",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:mobile": "bun run --cwd apps/mobile dev",
+    "start:mobile": "bun run --cwd apps/mobile start",
+    "typecheck": "bun run --cwd apps/mobile typecheck"
+  }
+}

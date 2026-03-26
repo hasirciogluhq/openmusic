@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "OpenMusic",
+    "slug": "openmusic-mobile",
+    "scheme": "openmusic",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.openmusic.mobile"
+    },
+    "android": {
+      "package": "com.openmusic.mobile",
+      "adaptiveIcon": {
+        "backgroundColor": "#0E0F13"
+      }
+    },
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}
