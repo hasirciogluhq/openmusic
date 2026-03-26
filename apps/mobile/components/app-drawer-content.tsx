@@ -5,7 +5,7 @@ import { router } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import { playlists } from "@/data/mock-music";
-import { colors, radius, spacing } from "@/theme";
+import { colors, layout, radius, spacing, typography } from "@/theme";
 
 const quickLinks = [
   { label: "Browse", icon: "compass-outline", href: "/(tabs)/browse" },
@@ -22,14 +22,6 @@ export function AppDrawerContent(props: DrawerContentComponentProps) {
       scrollEnabled
       style={styles.scroll}
     >
-      <View style={styles.header}>
-        <Text style={styles.eyebrow}>Library</Text>
-        <Text style={styles.title}>OpenMusic</Text>
-        <Text style={styles.subtitle}>
-          Yerel koleksiyon, playlist girisleri ve hizli erisim menusu.
-        </Text>
-      </View>
-
       <View style={styles.links}>
         {quickLinks.map((item) => (
           <Pressable
@@ -78,68 +70,47 @@ const styles = StyleSheet.create({
     backgroundColor: colors.sidebar,
   },
   content: {
-    paddingHorizontal: spacing.lg,
-    paddingTop: spacing.xxl,
-    paddingBottom: spacing.xxl,
-    gap: spacing.xl,
-  },
-  header: {
-    gap: spacing.xs,
-  },
-  eyebrow: {
-    color: colors.textMuted,
-    fontSize: 12,
-    fontWeight: "700",
-    letterSpacing: 1.5,
-    textTransform: "uppercase",
-  },
-  title: {
-    color: colors.textPrimary,
-    fontSize: 28,
-    fontWeight: "800",
-    letterSpacing: -0.6,
-  },
-  subtitle: {
-    color: colors.textSecondary,
-    fontSize: 14,
-    lineHeight: 20,
+    paddingHorizontal: layout.pageInset,
+    paddingTop: layout.pageTop,
+    paddingBottom: layout.pageBottom,
+    gap: layout.sectionGap,
   },
   links: {
-    gap: spacing.sm,
+    gap: layout.clusterGap,
   },
   linkRowWrap: {
     borderRadius: radius["2xl"],
     overflow: "hidden",
   },
   linkRow: {
-    minHeight: 54,
+    minHeight: layout.controlHeight,
     borderRadius: radius["2xl"],
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.md,
-    paddingHorizontal: spacing.md,
+    gap: layout.stackGap,
+    paddingHorizontal: layout.inset,
     backgroundColor: colors.glassStrong,
     borderWidth: 1,
     borderColor: colors.border,
   },
   linkText: {
     color: colors.textPrimary,
-    fontSize: 15,
+    fontSize: typography.body,
     fontWeight: "600",
   },
   playlistSection: {
-    gap: spacing.md,
+    gap: layout.stackGap,
   },
   sectionTitle: {
     color: colors.textPrimary,
-    fontSize: 17,
+    fontSize: typography.titleSm,
     fontWeight: "700",
   },
   playlistRow: {
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.md,
-    paddingVertical: spacing.sm,
+    gap: layout.stackGap,
+    paddingVertical: spacing["2"],
   },
   playlistArt: {
     width: 52,
@@ -153,20 +124,20 @@ const styles = StyleSheet.create({
   },
   playlistArtText: {
     color: colors.primary,
-    fontSize: 14,
+    fontSize: typography.meta,
     fontWeight: "800",
   },
   playlistTextWrap: {
     flex: 1,
-    gap: 2,
+    gap: spacing["1"],
   },
   playlistName: {
     color: colors.textPrimary,
-    fontSize: 15,
+    fontSize: typography.body,
     fontWeight: "600",
   },
   playlistMeta: {
     color: colors.textMuted,
-    fontSize: 12,
+    fontSize: typography.eyebrow,
   },
 });

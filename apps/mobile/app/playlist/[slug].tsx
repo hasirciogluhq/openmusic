@@ -5,7 +5,7 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { AppHeader } from "@/components/app-header";
 import { DownloadRow } from "@/components/download-row";
 import { librarySongs, playlists } from "@/data/mock-music";
-import { colors, radius, spacing } from "@/theme";
+import { colors, layout, radius, typography } from "@/theme";
 
 export default function PlaylistScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
@@ -49,31 +49,31 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
   content: {
-    paddingHorizontal: spacing.lg,
-    paddingTop: spacing.xxl,
-    paddingBottom: spacing.xxl,
-    gap: spacing.lg,
+    paddingHorizontal: layout.pageInset,
+    paddingTop: layout.pageTop,
+    paddingBottom: layout.pageBottom,
+    gap: layout.sectionGap,
   },
   heroCard: {
     borderRadius: radius["4xl"],
-    padding: spacing.lg,
+    padding: layout.insetLg,
     backgroundColor: colors.glassStrong,
     borderWidth: 1,
     borderColor: colors.border,
-    gap: spacing.xs,
+    gap: layout.clusterGap,
     overflow: "hidden",
   },
   heroCount: {
     color: colors.textPrimary,
-    fontSize: 24,
+    fontSize: typography.titleLg,
     fontWeight: "700",
   },
   heroHint: {
     color: colors.textSecondary,
-    fontSize: 14,
+    fontSize: typography.meta,
     lineHeight: 20,
   },
   list: {
-    gap: spacing.sm,
+    gap: layout.clusterGap,
   },
 });

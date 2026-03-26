@@ -43,20 +43,53 @@ export const colors = {
 };
 
 export const spacing = {
-  xs: 6,
-  sm: 10,
-  md: 16,
-  lg: 24,
-  xl: 32,
-  xxl: 40,
+  "0": 0,
+  "1": 4,
+  "2": 8,
+  "3": 12,
+  "4": 16,
+  "5": 20,
+  "6": 24,
+  "8": 32,
+  "10": 40,
+  "12": 48,
+  "16": 64,
+  "24": 96,
+  "28": 112,
 };
 
 export const radius = {
   sm: 8,
-  md: 10,
-  lg: 14,
-  xl: 18,
-  "2xl": 22,
-  "3xl": 26,
-  "4xl": 30,
+  md: 12,
+  lg: 16,
+  xl: 20,
+  "2xl": 24,
+  "3xl": 28,
+  "4xl": 32,
+};
+
+export const layout = {
+  pageInset: spacing["5"],
+  pageTop: spacing["8"],
+  pageBottom: spacing["28"],
+  sectionGap: spacing["6"],
+  stackGap: spacing["4"],
+  clusterGap: spacing["3"],
+  inset: spacing["4"],
+  insetLg: spacing["5"],
+  controlHeight: 56,
+  controlHeightSm: 48,
+  iconButton: 44,
+};
+
+export const typography = {
+  eyebrow: 12,
+  meta: 13,
+  body: 15,
+  bodyLg: 17,
+  titleSm: 18,
+  titleMd: 22,
+  titleLg: 32,
+  display: 36,
+  tabLabel: 11,
 };

@@ -3,7 +3,7 @@ import { BlurView } from "expo-blur";
 import { StyleSheet, Text, View } from "react-native";
 
 import { LibraryPreview } from "@/types/song";
-import { colors, radius, spacing } from "@/theme";
+import { colors, layout, radius, spacing, typography } from "@/theme";
 
 type LibraryShelfProps = {
   library: LibraryPreview;
@@ -34,32 +34,32 @@ export function LibraryShelf({ library }: LibraryShelfProps) {
 const styles = StyleSheet.create({
   card: {
     borderRadius: radius["4xl"],
-    padding: spacing.lg,
+    padding: layout.insetLg,
     backgroundColor: colors.glass,
     borderWidth: 1,
     borderColor: colors.border,
-    gap: spacing.md,
+    gap: layout.stackGap,
     overflow: "hidden",
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    gap: spacing.md,
+    gap: layout.stackGap,
   },
   title: {
     color: colors.textPrimary,
-    fontSize: 18,
+    fontSize: typography.titleSm,
     fontWeight: "700",
   },
   meta: {
     color: colors.textSecondary,
-    fontSize: 13,
-    marginTop: 2,
+    fontSize: typography.meta,
+    marginTop: spacing["1"],
   },
   previewRow: {
     flexDirection: "row",
-    gap: spacing.sm,
+    gap: layout.clusterGap,
   },
   previewCard: {
     flex: 1,
@@ -68,11 +68,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.glassSoft,
     alignItems: "flex-start",
     justifyContent: "flex-end",
-    padding: spacing.md,
+    padding: layout.inset,
   },
   previewText: {
     color: colors.textPrimary,
-    fontSize: 14,
+    fontSize: typography.meta,
     fontWeight: "600",
   },
 });

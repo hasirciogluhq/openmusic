@@ -6,7 +6,7 @@ import { LibraryShelf } from "@/components/library-shelf";
 import { SearchBar } from "@/components/search-bar";
 import { SongTile } from "@/components/song-tile";
 import { featuredLibraries, genres, spotlightTracks } from "@/data/mock-music";
-import { colors, spacing } from "@/theme";
+import { colors, layout, typography } from "@/theme";
 
 export default function BrowseScreen() {
   return (
@@ -58,22 +58,22 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
   content: {
-    paddingHorizontal: spacing.lg,
-    paddingTop: spacing.xxl,
-    paddingBottom: 120,
-    gap: spacing.xl,
+    paddingHorizontal: layout.pageInset,
+    paddingTop: layout.pageTop,
+    paddingBottom: layout.pageBottom,
+    gap: layout.sectionGap,
   },
   section: {
-    gap: spacing.md,
+    gap: layout.stackGap,
   },
   sectionTitle: {
     color: colors.textPrimary,
-    fontSize: 21,
+    fontSize: typography.titleMd,
     fontWeight: "700",
     letterSpacing: -0.4,
   },
   shelfStack: {
-    gap: spacing.md,
+    gap: layout.stackGap,
   },
   gridHeader: {
     flexDirection: "row",
@@ -82,12 +82,12 @@ const styles = StyleSheet.create({
   },
   sectionMeta: {
     color: colors.textMuted,
-    fontSize: 13,
+    fontSize: typography.meta,
     fontWeight: "600",
   },
   grid: {
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: spacing.md,
+    gap: layout.stackGap,
   },
 });

@@ -1,6 +1,6 @@
 import { NativeTabs } from "expo-router/unstable-native-tabs";
 
-import { colors } from "@/theme";
+import { colors, typography } from "@/theme";
 
 export default function TabsLayout() {
   return (
@@ -15,12 +15,12 @@ export default function TabsLayout() {
       labelStyle={{
         default: {
           color: colors.textMuted,
-          fontSize: 11,
+          fontSize: typography.tabLabel,
           fontWeight: "600",
         },
         selected: {
           color: colors.primary,
-          fontSize: 11,
+          fontSize: typography.tabLabel,
           fontWeight: "700",
         },
       }}

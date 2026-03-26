@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { Genre } from "@/types/song";
-import { colors, radius, spacing } from "@/theme";
+import { colors, layout, radius, spacing, typography } from "@/theme";
 
 type GenreRailProps = {
   items: Genre[];
@@ -26,25 +26,25 @@ export function GenreRail({ items }: GenreRailProps) {
 
 const styles = StyleSheet.create({
   content: {
-    gap: spacing.md,
-    paddingRight: spacing.md,
+    gap: layout.stackGap,
+    paddingRight: layout.inset,
   },
   card: {
     width: 154,
     minHeight: 104,
     borderRadius: radius["4xl"],
-    padding: spacing.lg,
+    padding: layout.insetLg,
     justifyContent: "space-between",
     overflow: "hidden",
   },
   label: {
     color: colors.primaryForeground,
-    fontSize: 20,
+    fontSize: typography.titleMd,
     fontWeight: "700",
   },
   count: {
     color: colors.primaryForeground,
-    fontSize: 12,
+    fontSize: typography.eyebrow,
     fontWeight: "600",
   },
 });

@@ -3,7 +3,7 @@ import { BlurView } from "expo-blur";
 import { StyleSheet, Text, View } from "react-native";
 
 import { Song } from "@/types/song";
-import { colors, radius, spacing } from "@/theme";
+import { colors, layout, radius, spacing, typography } from "@/theme";
 
 type DownloadRowProps = {
   song: Song;
@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.md,
-    padding: spacing.md,
+    gap: layout.stackGap,
+    padding: layout.inset,
     borderRadius: radius["3xl"],
     backgroundColor: colors.glassStrong,
     borderWidth: 1,
@@ -53,33 +53,33 @@ const styles = StyleSheet.create({
   },
   copyWrap: {
     flex: 1,
-    gap: 2,
+    gap: spacing["1"],
   },
   title: {
     color: colors.textPrimary,
-    fontSize: 15,
+    fontSize: typography.body,
     fontWeight: "700",
   },
   meta: {
     color: colors.textSecondary,
-    fontSize: 13,
+    fontSize: typography.meta,
   },
   caption: {
     color: colors.textMuted,
-    fontSize: 12,
+    fontSize: typography.eyebrow,
   },
   trailing: {
     alignItems: "flex-end",
-    gap: 4,
+    gap: spacing["1"],
   },
   duration: {
     color: colors.textPrimary,
-    fontSize: 13,
+    fontSize: typography.meta,
     fontWeight: "600",
   },
   format: {
     color: colors.primary,
-    fontSize: 11,
+    fontSize: typography.eyebrow,
     fontWeight: "800",
   },
 });

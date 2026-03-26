@@ -6,6 +6,7 @@ Bu uygulama tek renk sistemi kullanir. Kaynak, kullanicinin verdigi CSS token ya
 
 - Tum ekranlar sadece [theme/index.ts](/Users/hasircioglu/projects/openmusic/apps/mobile/theme/index.ts) icindeki tokenlari kullanir.
 - Bilesen icinde hardcoded renk kullanilmaz.
+- Bilesen icinde hardcoded `padding`, `margin`, `gap`, `radius`, `fontSize` kullanilmaz.
 - Yeni UI eklenirken `background`, `foreground`, `card`, `primary`, `secondary`, `muted`, `accent`, `border`, `ring`, `sidebar*`, `chart*` tokenlari disina cikilmaz.
 - Cam / liquid glass yuzeylerde dogrudan opak kart kullanilmaz; `expo-blur` + `glass`, `glassStrong`, `glassSoft`, `line` tokenlari birlikte kullanilir.
 - Drawer, tab bar, search, playlist row, summary panel ve benzeri tum yuzeyler ayni sistemden beslenir.
@@ -45,6 +46,23 @@ Apple'in yeni liquid glass hissi Expo tarafinda birebir sistem API olarak gelmiy
 - Golgeyi cok hafif tut
 - Radius sistemi sadece `radius` tokenlarindan secilsin
 
+## Layout grid kurali
+
+- Tum sayfalar `layout.pageInset` ile acilir.
+- Dikey ana akis `layout.sectionGap` ile ayrilir.
+- Kart ici satirlar `layout.stackGap` veya `layout.clusterGap` kullanir.
+- Kontroller sadece `layout.controlHeight` veya `layout.controlHeightSm` yuksekliklerinden birini kullanir.
+- Tab bar, search, row, shelf, summary ve playlist bloklari farkli keyfi padding kullanmaz; `layout.inset` ve `layout.insetLg` kullanir.
+- Bir yuzeyin dis boslugu ile komsu yuzeyin ic boslugu farkli ritim yaratmayacak sekilde ayni 4px grid ustunde kalir.
+
+## Tipografi kurali
+
+- Tum `fontSize` degerleri `typography` tokenlarindan secilir.
+- Basliklar `display`, `titleLg`, `titleMd`, `titleSm`
+- Govde `bodyLg`, `body`, `meta`, `eyebrow`
+- Tab etiketleri yalnizca `tabLabel`
+- Bilesen icinde rasgele `lineHeight` ve `fontSize` turetilmez; mevcut tokene gore orantili kullanilir.
+
 ## Kullanilacak blur yaklasimi
 
 - Tab bar: `systemUltraThinMaterialLight`
@@ -55,6 +73,7 @@ Apple'in yeni liquid glass hissi Expo tarafinda birebir sistem API olarak gelmiy
 ## Yasaklar
 
 - Bilesen icinde `#hex`, `rgb()`, `rgba()` ile yeni renk yazmak
+- Bilesen icinde keyfi `padding`, `margin`, `gap`, `fontSize`, `borderRadius` yazmak
 - Mor/pembe/turuncu gibi yeni vurgu aileleri eklemek
 - Koyu tema tokenlarini bu projeye karistirmak
 - Kart icinde kart icinde kart hiyerarsisi kurmak

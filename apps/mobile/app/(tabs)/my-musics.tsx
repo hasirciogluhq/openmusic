@@ -5,7 +5,7 @@ import { AppHeader } from "@/components/app-header";
 import { DownloadRow } from "@/components/download-row";
 import { SearchBar } from "@/components/search-bar";
 import { librarySongs } from "@/data/mock-music";
-import { colors, radius, spacing } from "@/theme";
+import { colors, layout, radius, typography } from "@/theme";
 
 export default function MyMusicsScreen() {
   return (
@@ -52,14 +52,14 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
   content: {
-    paddingHorizontal: spacing.lg,
-    paddingTop: spacing.xxl,
-    paddingBottom: 120,
-    gap: spacing.lg,
+    paddingHorizontal: layout.pageInset,
+    paddingTop: layout.pageTop,
+    paddingBottom: layout.pageBottom,
+    gap: layout.sectionGap,
   },
   summaryRow: {
     flexDirection: "row",
-    gap: spacing.md,
+    gap: layout.stackGap,
   },
   summaryPill: {
     flex: 1,
@@ -67,20 +67,20 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.border,
     backgroundColor: colors.glassStrong,
-    padding: spacing.lg,
-    gap: spacing.xs,
+    padding: layout.insetLg,
+    gap: layout.clusterGap,
     overflow: "hidden",
   },
   summaryValue: {
     color: colors.textPrimary,
-    fontSize: 22,
+    fontSize: typography.titleMd,
     fontWeight: "700",
   },
   summaryLabel: {
     color: colors.textSecondary,
-    fontSize: 13,
+    fontSize: typography.meta,
   },
   list: {
-    gap: spacing.sm,
+    gap: layout.clusterGap,
   },
 });

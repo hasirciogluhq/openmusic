@@ -2,7 +2,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { BlurView } from "expo-blur";
 import { StyleSheet, Text, View } from "react-native";
 
-import { colors, radius, spacing } from "@/theme";
+import { colors, layout, radius, typography } from "@/theme";
 
 type SearchBarProps = {
   placeholder: string;
@@ -24,23 +24,23 @@ export function SearchBar({ placeholder, compact = false }: SearchBarProps) {
 
 const styles = StyleSheet.create({
   wrap: {
-    minHeight: 58,
+    minHeight: layout.controlHeight,
     borderRadius: radius["3xl"],
-    paddingHorizontal: spacing.md,
+    paddingHorizontal: layout.inset,
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.sm,
+    gap: layout.clusterGap,
     backgroundColor: colors.glassStrong,
     borderWidth: 1,
     borderColor: colors.border,
     overflow: "hidden",
   },
   compactWrap: {
-    minHeight: 52,
+    minHeight: layout.controlHeightSm,
     borderRadius: radius["2xl"],
   },
   placeholder: {
     color: colors.textMuted,
-    fontSize: 15,
+    fontSize: typography.body,
   },
 });

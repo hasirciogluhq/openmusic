@@ -4,7 +4,7 @@ import { DrawerActions } from "@react-navigation/native";
 import { BlurView } from "expo-blur";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-import { colors, radius, spacing } from "@/theme";
+import { colors, layout, radius, spacing, typography } from "@/theme";
 
 type AppHeaderProps = {
   eyebrow: string;
@@ -47,41 +47,41 @@ export function AppHeader({
 
 const styles = StyleSheet.create({
   header: {
-    gap: spacing.md,
+    gap: layout.stackGap,
   },
   topRow: {
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "space-between",
-    gap: spacing.md,
+    gap: layout.stackGap,
   },
   copyWrap: {
     flex: 1,
-    gap: spacing.xs,
+    gap: spacing["2"],
   },
   eyebrow: {
     color: colors.textMuted,
-    fontSize: 12,
+    fontSize: typography.eyebrow,
     fontWeight: "700",
     letterSpacing: 1.8,
     textTransform: "uppercase",
   },
   title: {
     color: colors.textPrimary,
-    fontSize: 34,
-    lineHeight: 38,
+    fontSize: typography.display,
+    lineHeight: 40,
     fontWeight: "800",
     letterSpacing: -1,
   },
   subtitle: {
     color: colors.textSecondary,
-    fontSize: 15,
+    fontSize: typography.body,
     lineHeight: 22,
     maxWidth: 290,
   },
   menuButtonWrap: {
-    width: 46,
-    height: 46,
+    width: layout.iconButton,
+    height: layout.iconButton,
     borderRadius: radius["2xl"],
     overflow: "hidden",
   },
