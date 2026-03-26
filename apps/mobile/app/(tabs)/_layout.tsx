@@ -1,56 +1,45 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { Tabs } from "expo-router";
+import { NativeTabs } from "expo-router/unstable-native-tabs";
+
+import { colors } from "@/theme";
 
 export default function TabsLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        headerShown: false,
-        tabBarStyle: {
-          backgroundColor: "#11131A",
-          borderTopColor: "#1C1F28",
-          height: 72,
-          paddingTop: 8,
-          paddingBottom: 10,
+    <NativeTabs
+      blurEffect="systemUltraThinMaterialDark"
+      backgroundColor="rgba(11, 14, 22, 0.72)"
+      badgeBackgroundColor={colors.accent}
+      iconColor={{
+        default: "rgba(232, 236, 245, 0.62)",
+        selected: colors.textPrimary,
+      }}
+      labelStyle={{
+        default: {
+          color: "rgba(232, 236, 245, 0.66)",
+          fontSize: 11,
+          fontWeight: "600",
         },
-        tabBarActiveTintColor: "#F5C451",
-        tabBarInactiveTintColor: "#7F8596",
-        tabBarLabelStyle: {
-          fontSize: 12,
+        selected: {
+          color: colors.textPrimary,
+          fontSize: 11,
           fontWeight: "700",
         },
-        sceneStyle: {
-          backgroundColor: "#090A0D",
-        },
       }}
+      shadowColor="rgba(255,255,255,0.08)"
+      disableTransparentOnScrollEdge
     >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Kutuphane",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="musical-notes" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="search"
-        options={{
-          title: "Ara",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="downloads"
-        options={{
-          title: "Indirilenler",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="download" size={size} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
+      <NativeTabs.Trigger name="browse">
+        <NativeTabs.Trigger.Icon
+          sf={{ default: "square.grid.2x2", selected: "square.grid.2x2.fill" }}
+        />
+        <NativeTabs.Trigger.Label>Browse</NativeTabs.Trigger.Label>
+      </NativeTabs.Trigger>
+
+      <NativeTabs.Trigger name="my-musics">
+        <NativeTabs.Trigger.Icon
+          sf={{ default: "music.note.list", selected: "music.note.list" }}
+        />
+        <NativeTabs.Trigger.Label>My Musics</NativeTabs.Trigger.Label>
+      </NativeTabs.Trigger>
+    </NativeTabs>
   );
 }

@@ -1,12 +1,14 @@
 export const colors = {
-  background: "#090A0D",
-  surface: "#12141B",
-  surfaceStrong: "#1A1D26",
-  border: "#252938",
-  textPrimary: "#F5F7FB",
-  textSecondary: "#A6ADBB",
-  textMuted: "#7D8494",
-  accent: "#F5C451",
+  background: "#05070B",
+  drawer: "#0A0D14",
+  glass: "rgba(17, 21, 31, 0.72)",
+  glassStrong: "rgba(19, 24, 35, 0.9)",
+  line: "rgba(255,255,255,0.09)",
+  tile: "#111622",
+  textPrimary: "#F4F7FB",
+  textSecondary: "rgba(233, 238, 246, 0.74)",
+  textMuted: "rgba(233, 238, 246, 0.5)",
+  accent: "#8CC8FF",
 };
 
 export const spacing = {

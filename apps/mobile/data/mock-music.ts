@@ -1,4 +1,4 @@
-import { Song } from "@/types/song";
+import { Genre, LibraryPreview, Playlist, Song } from "@/types/song";
 
 export const librarySongs: Song[] = [
   {
@@ -33,32 +33,95 @@ export const librarySongs: Song[] = [
     duration: "5:14",
     format: "WAV",
   },
+  {
+    id: "5",
+    title: "Velvet Echo",
+    artist: "Deniz Ates",
+    album: "Lacquered Lights",
+    duration: "3:21",
+    format: "MP3",
+  },
+  {
+    id: "6",
+    title: "Golden Static",
+    artist: "Cem Arman",
+    album: "North Window",
+    duration: "4:42",
+    format: "FLAC",
+  },
 ];
 
-export const quickMixes = [
+export const genres: Genre[] = [
   {
-    title: "Son eklenenler",
-    caption: "Cihaza son import edilen dosyalari one cikarir.",
-    count: "12",
+    id: "pop",
+    name: "Pop",
+    trackCount: 48,
+    tint: "#A24CFF",
   },
   {
-    title: "Uzun yol miksleri",
-    caption: "Offline dinleme icin ardisik oynatma listeleri.",
-    count: "08",
+    id: "rock",
+    name: "Rock",
+    trackCount: 31,
+    tint: "#FF6A3D",
+  },
+  {
+    id: "indie",
+    name: "Indie",
+    trackCount: 26,
+    tint: "#1C9D7C",
   },
 ];
 
-export const downloadQueue = [
+export const featuredLibraries: LibraryPreview[] = [
   {
-    title: "Dosya secimi",
-    caption: "Kullanici belge secici ile ses dosyasini veya klasoru sececek.",
+    id: "recent",
+    title: "Recently Played",
+    caption: "Sabah listeleri, son geceler ve yeniden donulen albumler.",
+    preview: ["City Drive", "Late Hours", "Glow Tape"],
   },
   {
-    title: "Metadata tarama",
-    caption: "Baslik, sanatci, album ve sure bilgileri parse edilecek.",
+    id: "offline",
+    title: "Offline Ready",
+    caption: "Ucak modu veya zayif ag senaryolari icin hazir.",
+    preview: ["Dawn Run", "No Signal", "Coastline"],
   },
   {
-    title: "Yerel index",
-    caption: "Arama ve hizli erisim icin yerel veritabanina yazilacak.",
+    id: "vinyl",
+    title: "Vinyl Mood",
+    caption: "Daha analog, daha yumusak, gec saatlere uygun secimler.",
+    preview: ["Amber Room", "Soft Needle", "Blue Hall"],
+  },
+];
+
+export const spotlightTracks = librarySongs.slice(0, 4);
+
+export const playlists: Playlist[] = [
+  {
+    slug: "recently-added",
+    name: "Recently Added",
+    caption: "Bu hafta cihaza gelen yeni dosyalar.",
+    count: 14,
+    initials: "RA",
+  },
+  {
+    slug: "offline-ready",
+    name: "Offline Ready",
+    caption: "Yol, ucus ve metro icin sabit duran secim.",
+    count: 26,
+    initials: "OF",
+  },
+  {
+    slug: "night-drive",
+    name: "Night Drive",
+    caption: "Daha koyu tonda synth ve pop secimleri.",
+    count: 18,
+    initials: "ND",
+  },
+  {
+    slug: "soft-rock",
+    name: "Soft Rock",
+    caption: "Sert olmayan ama dolgun gitar katmanlari.",
+    count: 21,
+    initials: "SR",
   },
 ];
